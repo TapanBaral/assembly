@@ -4,7 +4,7 @@ process assembly {
     
     publishDir "${params.output}/assembly", mode: "copy"
     cpu = 96
-    memory = 800.G
+    memory = 800
     input:
     path fastq_1
     path fastq_2
@@ -14,6 +14,7 @@ process assembly {
     script:
     """
     mkdir assembly_denovo
-    soapdenovo2-127mer all -c $configFile -o assembly_denovo -K 127 -p $task.cpus -a 900 
+    configFile = configFile.read().text
+    soapdenovo2-127mer all -s <(echo "$configFile") -o assembly_denovo/output127 -K 127 -p $task.cpus -a 800 
     """
 }

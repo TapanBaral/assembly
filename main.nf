@@ -23,6 +23,6 @@ workflow {
     if (params.fastq_1 && params.fastq_2) {
 
        assembly(fastq_1_ch, fastq_2_ch, configFile_ch)
-       assembly.out.spades_output.view()
+       assembly.out.assembly_output.view()
     }
 }
