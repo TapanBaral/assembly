@@ -15,6 +15,6 @@ process assembly {
     """
     mkdir assembly_denovo
     
-    soapdenovo2-127mer all -s ${configFile} -o assembly_denovo/output127 -K 63 -p $task.cpus -a 1024 -N 500000000 -V
+    soapdenovo2-63mer all -s ${configFile} -o assembly_denovo/output127 -K 63 -p $task.cpus -a 1024 -N 500000000 -V
     """
 }
