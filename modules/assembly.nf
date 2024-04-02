@@ -3,8 +3,8 @@ process assembly {
     container  params.dockerfile
     
     publishDir "${params.output}/assembly", mode: "copy"
-    cpu = 128
-    memory = 1024
+    cpu = params.cpu
+    memory = 10
     input:
     path fastq_1
     path fastq_2
@@ -15,6 +15,6 @@ process assembly {
     """
     mkdir assembly_denovo
     
-    soapdenovo2-63mer all -s ${configFile} -o assembly_denovo/output127 -K 63 -p $task.cpus -a 1024 -N 500000000 -V
+    soapdenovo2-63mer all -s ${configFile} -o assembly_denovo/output127 -K 63 -p $task.cpus -a 10 -N 500000000 -V
     """
 }
