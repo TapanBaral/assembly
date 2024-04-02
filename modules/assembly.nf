@@ -6,8 +6,6 @@ process assembly {
     cpu = params.cpu
     memory = 10
     input:
-    path fastq_1
-    path fastq_2
     path configFile
     output:
     path "assembly_denovo/*", emit: assembly_output

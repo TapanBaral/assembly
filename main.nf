@@ -8,9 +8,7 @@ include { assembly } from './modules/assembly'
 
 
 workflow {
-    if (params.fastq_1 && params.fastq_2) {
-
+    
        assembly(configFile_ch)
        assembly.out.assembly_output.view()
-    }
 }
