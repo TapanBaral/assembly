@@ -3,8 +3,8 @@ process assembly {
     container  params.dockerfile
     
     publishDir "${params.output}/assembly", mode: "copy"
-    cpu = params.cpu
-    memory = 10
+    cpus  params.cpu
+    memory  10
     input:
     path configFile
     output:
